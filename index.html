@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayuda's Quiz Application</title>
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(135deg, #cce0ff, #e2f3ff); /* Soft gradient background */
+      color: #333;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .quiz-container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      max-width: 700px;
+      width: 100%;
+    }
+    h1 {
+      text-align: center;
+      color: #007bff;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+    .question-block {
+      margin-bottom: 30px;
+      transition: all 0.3s ease-in-out;
+    }
+    .question-block h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #444;
+    }
+    .option-label {
+      display: block;
+      background-color: #f8f9fa;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border: 1px solid #ddd;
+    }
+    .option-label:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 1.2em;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result h2 {
+      font-size: 2em;
+      color: #28a745;
+    }
+    #retakeQuiz {
+      background-color: #6c757d;
+    }
+    #retakeQuiz:hover {
+      background-color: #5a6268;
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container fade-in">
+    <h1>Ayuda's Quiz Application</h1>
+    <form id="quizForm">
+      <div id="quiz">
+        <div class="question-block">
+          <h3>Question 1: What is the capital of France?</h3>
+          <label class="option-label">
+            <input type="radio" name="q1" value="Paris"> Paris
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q1" value="London"> London
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q1" value="Berlin"> Berlin
+          </label>
+        </div>
+        <div class="question-block">
+          <h3>Question 2: What is 2 + 2?</h3>
+          <label class="option-label">
+            <input type="radio" name="q2" value="4"> 4
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q2" value="5"> 5
+          </label>
+          <label class="option-label">
+            <input type="radio" name="q2" value="6"> 6
+          </label>
+        </div>
+      </div>
+      <button type="button" id="submitQuiz">Submit Quiz</button>
+    </form>
+    <div id="result" class="result" style="display: none;">
+      <h2>Your Score: <span id="score"></span></h2>
+      <button type="button" id="retakeQuiz">Retake Quiz</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
